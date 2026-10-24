@@ -1,0 +1,23 @@
+/* Toolora AI — lightweight, accessible motion system */
+:root{--motion-purple:#8b5cf6;--motion-cyan:#22d3ee}
+.logo{transition:transform .25s ease,filter .25s ease}
+.logo:hover{transform:translateY(-1px);filter:drop-shadow(0 0 10px rgba(139,92,246,.24))}
+.logo-icon{transition:transform .35s ease,box-shadow .35s ease}
+.logo:hover .logo-icon{transform:rotate(-7deg) scale(1.04);box-shadow:0 0 22px rgba(139,92,246,.3)}
+h1,h2,.section-heading h2{background-image:linear-gradient(105deg,currentColor 0%,currentColor 55%,#c4b5fd 75%,#67e8f9 100%);background-size:220% 100%;background-position:0% 50%;-webkit-background-clip:text;background-clip:text;transition:background-position .7s ease}
+h1:hover,h2:hover,.section-heading h2:hover{background-position:100% 50%}
+.button,.primary,.secondary,.filter-button{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease}
+.button:hover,.primary:hover,.secondary:hover{transform:translateY(-2px);box-shadow:0 9px 26px rgba(139,92,246,.2)}
+.category-card,.tool-card,.feature,.panel,.card,.note,.newsletter{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.category-card:hover,.tool-card:hover,.feature:hover,.panel:hover,.card:hover{box-shadow:0 12px 34px rgba(0,0,0,.18)}
+.nav-links a,.footer-links a,.footerlinks a,.links a,.text-link{transition:color .2s ease}
+.hero-rotator{min-height:1.8em;margin:12px 0 0;font-size:clamp(15px,2.2vw,20px);font-weight:750;letter-spacing:.01em;color:#c4b5fd}
+.hero-rotator span{display:inline-block;background:linear-gradient(100deg,#c4b5fd,#67e8f9,#c4b5fd);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:toolora-gradient-flow 4s linear infinite}
+.hero-rotator span.is-changing{animation:toolora-word-in .38s ease both,toolora-gradient-flow 4s linear infinite}
+@keyframes toolora-word-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes toolora-gradient-flow{to{background-position:200% center}}
+@keyframes toolora-rise-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+html.motion-ready .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+html.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(hover:none){.category-card:hover,.tool-card:hover,.feature:hover,.panel:hover,.card:hover{box-shadow:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transform:none!important}html.motion-ready .reveal{opacity:1!important;transform:none!important}}
