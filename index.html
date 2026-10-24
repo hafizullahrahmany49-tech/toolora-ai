@@ -109,6 +109,15 @@
       gap: 20px;
     }
 
+    .nav-links a {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 850px) {
+      .nav { gap: 14px; }
+      .nav-links { gap: 13px; }
+    }
+
     .logo {
       display: inline-flex;
       align-items: center;
@@ -645,35 +654,59 @@
       }
 
       .nav {
-        min-height: 65px;
+        min-height: 68px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+          "brand cta"
+          "links links";
+        gap: 10px 12px;
+        padding-top: 12px;
+        padding-bottom: 11px;
       }
 
       .logo {
-        font-size: 18px;
+        grid-area: brand;
+        min-width: 0;
+        font-size: 19px;
+        gap: 8px;
       }
 
       .logo-icon {
-        width: 34px;
-        height: 34px;
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
       }
 
       .nav-links {
-        gap: 12px;
-        font-size: 12px;
+        grid-area: links;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        padding-top: 9px;
+        border-top: 1px solid var(--border);
+        font-size: 13px;
       }
 
       .nav-links .optional {
-        display: none;
+        display: inline;
       }
 
       .nav .button {
-        padding: 9px 11px;
+        grid-area: cta;
+        padding: 10px 13px;
         font-size: 12px;
+        white-space: nowrap;
       }
 
       .hero {
-        padding: 76px 0 55px;
+        padding: 64px 0 48px;
       }
+
+      .nav-links a { font-size: 12px; }
+      .nav-links a:nth-child(2) { white-space: nowrap; }
+
 
       h1 {
         letter-spacing: -1.7px;
